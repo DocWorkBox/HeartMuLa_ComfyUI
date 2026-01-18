@@ -73,10 +73,15 @@ Model Sources
 ------------------------------------------------------------
 
 Github Repo: https://github.com/HeartMuLa/heartlib
+
 Paper: https://arxiv.org/abs/2601.10547
+
 Demo: https://heartmula.github.io/
+
 HeartMuLa-oss-3B: https://huggingface.co/HeartMuLa/HeartMuLa-oss-3B
+
 HeartCodec-oss: https://huggingface.co/HeartMuLa/HeartCodec-oss
+
 HeartTranscriptor-oss: https://huggingface.co/HeartMuLa/HeartTranscriptor-oss
 
 
