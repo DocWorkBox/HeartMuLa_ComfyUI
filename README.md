@@ -5,6 +5,9 @@ ComfyUI Custom Node for HeartMuLa AI Music Generation and Transcript Text
 https://github.com/HeartMuLa/heartlib
 
 
+How To Use this In Basic: https://youtu.be/F9LFAeUbBIs
+
+
 <img width="1418" height="595" alt="image" src="https://github.com/user-attachments/assets/44f4b065-bfe0-405d-8324-e10f5c60b320" />
 
 
