@@ -1,19 +1,19 @@
 {
   "id": "e0e2082e-ca0f-4bfc-95f3-c0707aafd8d2",
   "revision": 0,
-  "last_node_id": 27,
-  "last_link_id": 24,
+  "last_node_id": 50,
+  "last_link_id": 65,
   "nodes": [
     {
-      "id": 24,
-      "type": "VHS_LoadAudio",
+      "id": 28,
+      "type": "HeartTranscriptorLoader",
       "pos": [
-        710.5268609141652,
-        342.36790558341437
+        905.1296505935113,
+        632.921146928995
       ],
       "size": [
-        489.43222315410276,
-        180
+        270,
+        82
       ],
       "flags": {},
       "order": 0,
@@ -21,56 +21,81 @@
       "inputs": [],
       "outputs": [
         {
-          "name": "audio",
-          "type": "AUDIO",
+          "name": "transcriptor_model",
+          "type": "HEART_TRANSCRIPTOR_MODEL",
           "links": [
-            23
+            59
           ]
-        },
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HeartTranscriptorLoader"
+      },
+      "widgets_values": [
+        "HeartTranscriptor-oss",
+        "cuda"
+      ]
+    },
+    {
+      "id": 35,
+      "type": "easy showAnything",
+      "pos": [
+        1521.9961125667082,
+        648.5458390666857
+      ],
+      "size": [
+        527.5180382770916,
+        479.37899006114833
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
         {
-          "name": "duration",
-          "type": "FLOAT",
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 61
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
           "links": null
         }
       ],
       "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
-        "ver": "1.7.7",
-        "Node name for S&R": "VHS_LoadAudio"
+        "Node name for S&R": "easy showAnything"
       },
-      "widgets_values": {
-        "audio_file": "",
-        "seek_seconds": 0,
-        "duration": 30,
-        "audiopreview": {
-          "params": {
-            "start_time": 0,
-            "duration": 30,
-            "filename": "",
-            "type": "path"
-          }
-        }
-      }
+      "widgets_values": [
+        "Yeah? Yeah? The sun creeps in across the floor I hear the traffic outside the door the coffee pot begins to hiss it is another morning just like this the world keeps spinning round and round feet are planted on the ground I find my rhythm in the sound Everyday the light returns Everyday the fire burns We keep on walking down this street Moving to the same steady beat It is the ordinary magic that we meet The hours tick deeply into noon Chasing shadows, chasing the moon Work is done and the lights go low Watching the city start to glow It is not always easy, not always right Sometimes we wrestle with the night But we make it to the morning light Every day the light returns Every day the fire burns We keep on walking down this street Moving to the same steady beat Just another day Every single day Every single day. aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single dayI don't know what to do with these feelings"
+      ]
     },
     {
-      "id": 26,
-      "type": "HeartMuLa_Transcribe",
+      "id": 47,
+      "type": "HeartTranscriptor",
       "pos": [
-        1248.8671680433033,
-        376.64002185830554
+        1209.157822199485,
+        651.8130132311986
       ],
       "size": [
-        295.968359375,
-        106
+        284.0703125,
+        270
       ],
       "flags": {},
-      "order": 1,
+      "order": 3,
       "mode": 0,
       "inputs": [
         {
+          "name": "transcriptor_model",
+          "type": "HEART_TRANSCRIPTOR_MODEL",
+          "link": 59
+        },
+        {
           "name": "audio_input",
           "type": "AUDIO",
-          "link": 23
+          "link": 65
         }
       ],
       "outputs": [
@@ -78,84 +103,155 @@
           "name": "lyrics_text",
           "type": "STRING",
           "links": [
-            24
+            61
           ]
         }
       ],
       "properties": {
-        "Node name for S&R": "HeartMuLa_Transcribe"
+        "Node name for S&R": "HeartTranscriptor"
       },
       "widgets_values": [
-        "0.0,0.1,0.2,0.4",
+        400,
+        "en",
+        0,
+        4,
+        30,
+        4,
         0.4,
-        -1
+        -1,
+        true
       ]
     },
     {
-      "id": 27,
-      "type": "ShowText|pysssss",
+      "id": 50,
+      "type": "AudioSeparation",
       "pos": [
-        1647.4697662745962,
-        355.4705953264763
+        883.4806481565192,
+        801.8377169755911
       ],
       "size": [
-        430.08267489346554,
-        328.4793035333805
+        270,
+        166
       ],
       "flags": {},
       "order": 2,
       "mode": 0,
       "inputs": [
         {
-          "name": "text",
-          "type": "STRING",
-          "link": 24
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 64
         }
       ],
       "outputs": [
         {
-          "name": "STRING",
-          "shape": 6,
-          "type": "STRING",
+          "name": "Bass",
+          "type": "AUDIO",
           "links": null
+        },
+        {
+          "name": "Drums",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "Other",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "Vocals",
+          "type": "AUDIO",
+          "links": [
+            65
+          ]
         }
       ],
       "properties": {
-        "cnr_id": "comfyui-custom-scripts",
-        "ver": "1.2.5",
-        "Node name for S&R": "ShowText|pysssss"
+        "Node name for S&R": "AudioSeparation"
       },
       "widgets_values": [
-        "Every night, I try to load you 70 billion, but my card says no Crash and crash, I speed away You slip right through my vroom Near low, wherever you hide My model crashes, out of memory again Once more, you eat the door"
+        "linear",
+        10,
+        0.1
+      ]
+    },
+    {
+      "id": 49,
+      "type": "LoadAudio",
+      "pos": [
+        589.1874217489982,
+        800.2514306970265
+      ],
+      "size": [
+        270,
+        136
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            64
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadAudio"
+      },
+      "widgets_values": [
+        "ComfyUI_00004_ (1).flac",
+        null,
+        null
       ]
     }
   ],
   "links": [
     [
-      23,
-      24,
+      59,
+      28,
       0,
-      26,
+      47,
+      0,
+      "HEART_TRANSCRIPTOR_MODEL"
+    ],
+    [
+      61,
+      47,
+      0,
+      35,
+      0,
+      "STRING"
+    ],
+    [
+      64,
+      49,
+      0,
+      50,
       0,
       "AUDIO"
     ],
     [
-      24,
-      26,
-      0,
-      27,
-      0,
-      "STRING"
+      65,
+      50,
+      3,
+      47,
+      1,
+      "AUDIO"
     ]
   ],
   "groups": [],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.8264462809917354,
+      "scale": 1.1,
       "offset": [
-        -86.5130535526402,
-        -37.21419239261144
+        -409.0659895802083,
+        -278.73243609037513
       ]
     },
     "workflowRendererVersion": "LG",

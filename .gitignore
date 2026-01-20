@@ -1,0 +1,6 @@
+.trae/
+.trae
+__pycache__/
+*.pyc
+*.mp3
+*.wav
