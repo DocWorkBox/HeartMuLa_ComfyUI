@@ -27,19 +27,22 @@
 
 ## 🛠️ 安装方法
 
+### 方法一：通过 ComfyUI Manager 安装（推荐）
+
+1.  在 ComfyUI Manager 中搜索 `HeartMuLa`。
+2.  点击安装即可。
+
+### 方法二：手动安装
+
 1.  进入您的 ComfyUI 自定义节点目录：
     ```bash
     cd ComfyUI/custom_nodes
     ```
 2.  克隆本项目：
     ```bash
-    git clone https://github.com/benjiyaya/HeartMuLa_ComfyUI
+    git clone https://github.com/DocWorkBox/HeartMuLa_ComfyUI
     ```
-3.  进入项目目录并安装依赖：
-    ```bash
-    cd HeartMuLa_ComfyUI
-    pip install -r requirements.txt
-    ```
+3.  重启 ComfyUI 即可（依赖将在首次运行时自动安装）。
 
 ## 🚀 使用说明
 

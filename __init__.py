@@ -29,20 +29,21 @@ from .nodes import (
     HeartTranscriptor,
 )
 
+# Node Mappings
 NODE_CLASS_MAPPINGS = {
-    "HeartMuLaModelLoader": HeartMuLaModelLoader,
-    "HeartCodecLoader": HeartCodecLoader,
-    "HeartMuLaGenerator": HeartMuLaGenerator,
-    "HeartTranscriptorLoader": HeartTranscriptorLoader,
-    "HeartTranscriptor": HeartTranscriptor,
+    "Doc_HeartMuLaModelLoader": HeartMuLaModelLoader,
+    "Doc_HeartCodecLoader": HeartCodecLoader,
+    "Doc_HeartTranscriptorLoader": HeartTranscriptorLoader,
+    "Doc_HeartMuLaGenerator": HeartMuLaGenerator,
+    "Doc_HeartTranscriptor": HeartTranscriptor,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "HeartMuLaModelLoader": "HeartMuLa Model Loader",
-    "HeartCodecLoader": "HeartCodec Loader",
-    "HeartMuLaGenerator": "HeartMuLa Music Generator",
-    "HeartTranscriptorLoader": "HeartTranscriptor Loader",
-    "HeartTranscriptor": "HeartTranscriptor",
+    "Doc_HeartMuLaModelLoader": "HeartMuLa Model Loader (Doc)",
+    "Doc_HeartCodecLoader": "HeartCodec Loader (Doc)",
+    "Doc_HeartTranscriptorLoader": "HeartTranscriptor Loader (Doc)",
+    "Doc_HeartMuLaGenerator": "HeartMuLa Music Generator (Doc)",
+    "Doc_HeartTranscriptor": "HeartTranscriptor (Doc)",
 }
 
-__all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
+__all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]

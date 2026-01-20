@@ -14,7 +14,33 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v4
-      - name: Publish Custom Node
-        uses: Comfy-Org/publish-node-action@main
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          personal_access_token: ${{ secrets.REGISTRY_ACCESS_TOKEN }}
+          python-version: '3.x'
+
+      - name: Install Comfy CLI
+        run: pip install comfy-cli
+
+      - name: Debug Secrets
+        run: |
+          if [ -n "${{ secrets.REGISTRY_ACCESS_TOKEN }}" ]; then
+            echo "REGISTRY_ACCESS_TOKEN is set (length: ${#REGISTRY_ACCESS_TOKEN})"
+          else
+            echo "REGISTRY_ACCESS_TOKEN is NOT set"
+          fi
+        env:
+          REGISTRY_ACCESS_TOKEN: ${{ secrets.REGISTRY_ACCESS_TOKEN }}
+
+      - name: Publish Custom Node
+        env:
+          COMFY_REGISTRY_TOKEN: ${{ secrets.REGISTRY_ACCESS_TOKEN }}
+          COMFY_CLI_SKIP_PROMPT: "1"
+          COMFY_CLI_ENABLE_TELEMETRY: "0"
+        run: |
+          if [ -z "$COMFY_REGISTRY_TOKEN" ]; then
+            echo "Error: COMFY_REGISTRY_TOKEN is not set."
+            exit 1
+          fi
+          yes | comfy node publish --token "$COMFY_REGISTRY_TOKEN"
