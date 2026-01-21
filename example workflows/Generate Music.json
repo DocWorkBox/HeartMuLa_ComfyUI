@@ -1,79 +1,15 @@
 {
   "id": "3ecf1006-715f-4d0d-b2d8-4e9441691a8c",
   "revision": 0,
-  "last_node_id": 5,
-  "last_link_id": 4,
+  "last_node_id": 11,
+  "last_link_id": 7,
   "nodes": [
     {
-      "id": 1,
-      "type": "HeartCodecLoader",
+      "id": 8,
+      "type": "Doc_HeartMuLaGenerator",
       "pos": [
-        1944.2270837314497,
-        1132.282065161128
-      ],
-      "size": [
-        270,
-        82
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "heartcodec_model",
-          "type": "HEARTCODEC_MODEL",
-          "links": [
-            1
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "HeartCodecLoader"
-      },
-      "widgets_values": [
-        "HeartCodec-oss",
-        "cpu"
-      ]
-    },
-    {
-      "id": 3,
-      "type": "HeartMuLaModelLoader",
-      "pos": [
-        1939.348064979745,
-        983.3331897754416
-      ],
-      "size": [
-        270,
-        82
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "heartmula_model",
-          "type": "HEARTMULA_MODEL",
-          "links": [
-            2
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "HeartMuLaModelLoader"
-      },
-      "widgets_values": [
-        "3B",
-        "cpu"
-      ]
-    },
-    {
-      "id": 2,
-      "type": "HeartMuLaGenerator",
-      "pos": [
-        2308.9165968802904,
-        969.7660731583509
+        2388.816852928117,
+        532.3049489924316
       ],
       "size": [
         400,
@@ -86,12 +22,12 @@
         {
           "name": "heartmula_model",
           "type": "HEARTMULA_MODEL",
-          "link": 2
+          "link": 5
         },
         {
           "name": "heartcodec_model",
           "type": "HEARTCODEC_MODEL",
-          "link": 1
+          "link": 6
         }
       ],
       "outputs": [
@@ -99,7 +35,7 @@
           "name": "audio_output",
           "type": "AUDIO",
           "links": [
-            4
+            7
           ]
         },
         {
@@ -109,27 +45,91 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "HeartMuLaGenerator"
+        "Node name for S&R": "Doc_HeartMuLaGenerator"
       },
       "widgets_values": [
         "[Intro]\n\n[Verse]\nThe sun creeps in across the floor\nI hear the traffic outside the door\nThe coffee pot begins to hiss\nIt is another morning just like this\n\n[Prechorus]\nThe world keeps spinning round and round\nFeet are planted on the ground\nI find my rhythm in the sound\n\n[Chorus]\nEvery day the light returns\nEvery day the fire burns\nWe keep on walking down this street\nMoving to the same steady beat\nIt is the ordinary magic that we meet\n\n[Verse]\nThe hours tick deeply into noon\nChasing shadows,chasing the moon\nWork is done and the lights go low\nWatching the city start to glow\n\n[Bridge]\nIt is not always easy,not always bright\nSometimes we wrestle with the night\nBut we make it to the morning light\n\n[Chorus]\nEvery day the light returns\nEvery day the fire burns\nWe keep on walking down this street\nMoving to the same steady beat\n\n[Outro]\nJust another day\nEvery single day",
-        "",
+        "rock",
         60000,
         50,
         1,
         1.5,
-        653740792526834,
+        511213929857967,
         "randomize",
         0,
         true
       ]
     },
     {
-      "id": 5,
+      "id": 10,
+      "type": "Doc_HeartCodecLoader",
+      "pos": [
+        2025.6900215740145,
+        687.2740563858046
+      ],
+      "size": [
+        270.784765625,
+        82
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "heartcodec_model",
+          "type": "HEARTCODEC_MODEL",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Doc_HeartCodecLoader"
+      },
+      "widgets_values": [
+        "HeartCodec-oss",
+        "cpu"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "Doc_HeartMuLaModelLoader",
+      "pos": [
+        2002.7072719184648,
+        536.901465858643
+      ],
+      "size": [
+        309.2369140625,
+        82
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "heartmula_model",
+          "type": "HEARTMULA_MODEL",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Doc_HeartMuLaModelLoader"
+      },
+      "widgets_values": [
+        "3B",
+        "cpu"
+      ]
+    },
+    {
+      "id": 11,
       "type": "SaveAudio",
       "pos": [
-        2767.5761212044827,
-        973.4443211926215
+        2909.5394672131392,
+        556.6009462397574
       ],
       "size": [
         270,
@@ -142,7 +142,7 @@
         {
           "name": "audio",
           "type": "AUDIO",
-          "link": 4
+          "link": 7
         }
       ],
       "outputs": [],
@@ -156,26 +156,26 @@
   ],
   "links": [
     [
-      1,
-      1,
+      5,
+      9,
       0,
-      2,
-      1,
-      "HEARTCODEC_MODEL"
-    ],
-    [
-      2,
-      3,
-      0,
-      2,
+      8,
       0,
       "HEARTMULA_MODEL"
     ],
     [
-      4,
-      2,
+      6,
+      10,
       0,
-      5,
+      8,
+      1,
+      "HEARTCODEC_MODEL"
+    ],
+    [
+      7,
+      8,
+      0,
+      11,
       0,
       "AUDIO"
     ]
@@ -185,10 +185,10 @@
   "extra": {
     "workflowRendererVersion": "LG",
     "ds": {
-      "scale": 1.3513057093104068,
+      "scale": 0.6934334949441391,
       "offset": [
-        -1682.8128443063963,
-        -629.5829589282764
+        -1156.8887526952576,
+        95.92541252533785
       ]
     },
     "frontendVersion": "1.36.14",

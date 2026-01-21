@@ -1,41 +1,9 @@
 {
   "id": "e0e2082e-ca0f-4bfc-95f3-c0707aafd8d2",
   "revision": 0,
-  "last_node_id": 50,
-  "last_link_id": 65,
+  "last_node_id": 52,
+  "last_link_id": 68,
   "nodes": [
-    {
-      "id": 28,
-      "type": "HeartTranscriptorLoader",
-      "pos": [
-        905.1296505935113,
-        632.921146928995
-      ],
-      "size": [
-        270,
-        82
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "transcriptor_model",
-          "type": "HEART_TRANSCRIPTOR_MODEL",
-          "links": [
-            59
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "HeartTranscriptorLoader"
-      },
-      "widgets_values": [
-        "HeartTranscriptor-oss",
-        "cuda"
-      ]
-    },
     {
       "id": 35,
       "type": "easy showAnything",
@@ -55,7 +23,7 @@
           "name": "anything",
           "shape": 7,
           "type": "*",
-          "link": 61
+          "link": 67
         }
       ],
       "outputs": [
@@ -69,15 +37,48 @@
         "Node name for S&R": "easy showAnything"
       },
       "widgets_values": [
-        "Yeah? Yeah? The sun creeps in across the floor I hear the traffic outside the door the coffee pot begins to hiss it is another morning just like this the world keeps spinning round and round feet are planted on the ground I find my rhythm in the sound Everyday the light returns Everyday the fire burns We keep on walking down this street Moving to the same steady beat It is the ordinary magic that we meet The hours tick deeply into noon Chasing shadows, chasing the moon Work is done and the lights go low Watching the city start to glow It is not always easy, not always right Sometimes we wrestle with the night But we make it to the morning light Every day the light returns Every day the fire burns We keep on walking down this street Moving to the same steady beat Just another day Every single day Every single day. aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single day aaaah every single dayI don't know what to do with these feelings"
+        "Yeah? Yeah? The sun creeps in across the floor I hear the traffic outside the door The coffee pot begins to hiss It is another morning just like this The world keeps spinning round and round Feet are planted on the ground I find my rhythm in the sound Everyday the light returns Everyday the fire burns We keep on walking down this street Moving to the same steady beat It is the ordinary magic that we meet The hours tick deeply into noon Chasing shadows, ch-chasing the moon Work is done and the lights go low Watching the city start to glow It is not always easy, not always right Sometimes we wrestle with the night But we make it to the morning light Everyday the lights go low Watching the city start to glow It is not always easy, not always right Sometimes we wrestle with the night But we make it to the morning light Everyday the lights go Every day the fire burns We keep on walking down this street Moving to the same steady beat Just another day） （Every single day） Mmmmm, mmmm, mmmm （Every single day） Mmm ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ah, ahAh... ahhh... ahhh... ahhh... ahhh... ahhh... ahhh... ahhh..."
       ]
     },
     {
-      "id": 47,
-      "type": "HeartTranscriptor",
+      "id": 49,
+      "type": "LoadAudio",
       "pos": [
-        1209.157822199485,
-        651.8130132311986
+        589.1874217489982,
+        800.2514306970265
+      ],
+      "size": [
+        270,
+        136
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            64
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadAudio"
+      },
+      "widgets_values": [
+        "ComfyUI_00004_ (1).flac",
+        null,
+        null
+      ]
+    },
+    {
+      "id": 51,
+      "type": "Doc_HeartTranscriptor",
+      "pos": [
+        1202.9063886691683,
+        674.8144739159821
       ],
       "size": [
         284.0703125,
@@ -90,12 +91,12 @@
         {
           "name": "transcriptor_model",
           "type": "HEART_TRANSCRIPTOR_MODEL",
-          "link": 59
+          "link": 66
         },
         {
           "name": "audio_input",
           "type": "AUDIO",
-          "link": 65
+          "link": 68
         }
       ],
       "outputs": [
@@ -103,23 +104,55 @@
           "name": "lyrics_text",
           "type": "STRING",
           "links": [
-            61
+            67
           ]
         }
       ],
       "properties": {
-        "Node name for S&R": "HeartTranscriptor"
+        "Node name for S&R": "Doc_HeartTranscriptor"
       },
       "widgets_values": [
         400,
-        "en",
+        "auto",
         0,
         4,
         30,
-        4,
+        5,
         0.4,
         -1,
         true
+      ]
+    },
+    {
+      "id": 52,
+      "type": "Doc_HeartTranscriptorLoader",
+      "pos": [
+        849.5607749895831,
+        607.423799090684
+      ],
+      "size": [
+        307.4732421875,
+        82
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "transcriptor_model",
+          "type": "HEART_TRANSCRIPTOR_MODEL",
+          "links": [
+            66
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Doc_HeartTranscriptorLoader"
+      },
+      "widgets_values": [
+        "HeartTranscriptor-oss",
+        "cpu"
       ]
     },
     {
@@ -163,7 +196,7 @@
           "name": "Vocals",
           "type": "AUDIO",
           "links": [
-            65
+            68
           ]
         }
       ],
@@ -175,58 +208,9 @@
         10,
         0.1
       ]
-    },
-    {
-      "id": 49,
-      "type": "LoadAudio",
-      "pos": [
-        589.1874217489982,
-        800.2514306970265
-      ],
-      "size": [
-        270,
-        136
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "AUDIO",
-          "type": "AUDIO",
-          "links": [
-            64
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LoadAudio"
-      },
-      "widgets_values": [
-        "ComfyUI_00004_ (1).flac",
-        null,
-        null
-      ]
     }
   ],
   "links": [
-    [
-      59,
-      28,
-      0,
-      47,
-      0,
-      "HEART_TRANSCRIPTOR_MODEL"
-    ],
-    [
-      61,
-      47,
-      0,
-      35,
-      0,
-      "STRING"
-    ],
     [
       64,
       49,
@@ -236,10 +220,26 @@
       "AUDIO"
     ],
     [
-      65,
+      66,
+      52,
+      0,
+      51,
+      0,
+      "HEART_TRANSCRIPTOR_MODEL"
+    ],
+    [
+      67,
+      51,
+      0,
+      35,
+      0,
+      "STRING"
+    ],
+    [
+      68,
       50,
       3,
-      47,
+      51,
       1,
       "AUDIO"
     ]
@@ -248,10 +248,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1.1,
+      "scale": 1.2100000000000026,
       "offset": [
-        -409.0659895802083,
-        -278.73243609037513
+        -459.2026621637651,
+        -322.9441692999861
       ]
     },
     "workflowRendererVersion": "LG",

@@ -1,7 +1,7 @@
 [project]
 name = "zhaoke1006-heartmula-comfyui"
 description = "ComfyUI Custom Node for HeartMuLa AI Music Generation and Transcript Text (Low VRAM optimized)"
-version = "1.0.7"
+version = "1.0.8"
 license = {file = "LICENSE"} 
 # classifiers = [
 #     # For OS-independent nodes (works on all operating systems)
