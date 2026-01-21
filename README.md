@@ -1,4 +1,4 @@
-# HeartMuLa ComfyUI (中文优化版)
+# HeartMuLa ComfyUI (显存优化版)
 
 这是一个为 [ComfyUI](https://github.com/comfyanonymous/ComfyUI) 开发的自定义节点插件，用于支持 **HeartMuLa** 音乐生成模型和歌词转录功能。
 
