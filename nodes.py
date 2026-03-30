@@ -359,7 +359,16 @@ class HeartMuLaGenerator:
         if wav_cpu.ndim == 1:
             wav_cpu = wav_cpu.unsqueeze(0) # (1, T)
         
-        torchaudio.save(out_path, wav_cpu, 48000)
+        # torchaudio.save(out_path, wav_cpu, 48000)
+        # Windows-compatible audio save (avoids TorchCodec which is Linux-only)
+        try:
+            import soundfile as sf
+            wav_np = wav_cpu.numpy()
+            if wav_np.ndim == 2:
+                wav_np = wav_np.T  # soundfile expects (Time, Channels)
+            sf.write(out_path, wav_np, 48000)
+        except ImportError:
+            torchaudio.save(out_path, wav_cpu, 48000, backend="soundfile")
 
         # For ComfyUI AUDIO type: (1, C, T) batch or (C, T)
         # ComfyUI typically expects (Batch, Channels, Time) or just (Channels, Time)
